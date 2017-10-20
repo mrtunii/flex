@@ -14,7 +14,5 @@ namespace Flex.Controllers
         {
             return View();
         }
-
-      
     }
 }

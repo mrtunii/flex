@@ -12,7 +12,6 @@ namespace Flex.Controllers
         // GET: api/sendlog
         public JsonResult Index()
         {
-
             return Json("");
         }
     }

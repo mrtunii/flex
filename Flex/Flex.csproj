@@ -28,6 +28,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -129,6 +130,8 @@
     <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Core\AuthUser.cs" />
+    <Compile Include="Core\Crypto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -161,6 +164,12 @@
     <Folder Include="Assets\plugins\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Api\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Flex.Log\Flex.Log.csproj">
+      <Project>{3C8391AA-FB96-4961-84B9-E575F4220162}</Project>
+      <Name>Flex.Log</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

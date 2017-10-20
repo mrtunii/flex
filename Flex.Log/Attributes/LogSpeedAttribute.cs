@@ -1,27 +1,20 @@
-﻿using System;
+﻿using Flex.Log.Models;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Helpers;
 using System.Web.Mvc;
 
 namespace Flex.Log.Attributes
 {
-    public class LogSpeedAttribute : ActionFilterAttribute
+    public  class LogSpeedAttribute : ActionFilterAttribute, IExceptionFilter
     {
-        public string controllerName;
-        public string methodName;
-        public DateTime requestStartDate;
-        public DateTime requestEndDate;
-        /// <summary>
-        /// Key generated in Flex system
-        /// </summary>
+     
         public string FlexKey;
-        /// <summary>
-        ///    How much time did it take to  complete request basically it's subtraction of requestStartDate and requestEndDate (in Milliseconds)
-        /// </summary>
-        public long requestPeriod;
+        
         public LogSpeedAttribute()
         {
             FlexKey = ConfigurationManager.AppSettings["FlexKey"];
@@ -29,19 +22,23 @@ namespace Flex.Log.Attributes
         
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            CheckIfFlexKeyExist();
-            controllerName = filterContext.RouteData.Values["controller"].ToString();
-            methodName = filterContext.RouteData.Values["action"].ToString();
-            requestStartDate = DateTime.Now;
+            //CheckIfFlexKeyExist();
+            LogModel.MethodName = filterContext.RouteData.Values["action"].ToString();
+            LogModel.ControllerName = filterContext.RouteData.Values["controller"].ToString();
+            LogModel.RequestStartDate = DateTime.Now;
             base.OnActionExecuting(filterContext);
         }
 
         public override void OnActionExecuted(ActionExecutedContext filterContext)
         {
-
-            requestEndDate = DateTime.Now;
-            requestPeriod = requestStartDate.Millisecond - requestEndDate.Millisecond;
+            LogModel.RequestEndDate = DateTime.Now;
+            LogModel.CalculateRequestPeriod();
             base.OnActionExecuted(filterContext);
+        }
+
+        public void OnException(ExceptionContext filterContext)
+        {
+            var mt = filterContext.Exception.StackTrace;
         }
 
         /// <summary>
