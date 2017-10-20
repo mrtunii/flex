@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flex", "Flex\Flex.csproj", "{67661EC8-FFDB-4EAC-B38D-A2867C90CB22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flex.Log", "Flex.Log\Flex.Log.csproj", "{3C8391AA-FB96-4961-84B9-E575F4220162}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67661EC8-FFDB-4EAC-B38D-A2867C90CB22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67661EC8-FFDB-4EAC-B38D-A2867C90CB22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67661EC8-FFDB-4EAC-B38D-A2867C90CB22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67661EC8-FFDB-4EAC-B38D-A2867C90CB22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C8391AA-FB96-4961-84B9-E575F4220162}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C8391AA-FB96-4961-84B9-E575F4220162}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C8391AA-FB96-4961-84B9-E575F4220162}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C8391AA-FB96-4961-84B9-E575F4220162}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://mrtunii.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Flex.Log\\Flex.Log.csproj
+		SccProjectName1 = Flex.Log
+		SccLocalPath1 = Flex.Log
+		SccProjectUniqueName2 = Flex\\Flex.csproj
+		SccProjectName2 = Flex
+		SccLocalPath2 = Flex
+	EndGlobalSection
+EndGlobal
