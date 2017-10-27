@@ -20,18 +20,35 @@ namespace Flex.Core
             set { HttpContext.Current.Session["IsAuthorized"] = value; }
         }
 
-
-        public static string Name
+        public static int? ID
         {
             get
             {
-                if (HttpContext.Current.Session["Name"] != null)
+                if (HttpContext.Current.Session["ID"] != null)
                 {
-                    return HttpContext.Current.Session["Name"].ToString();
+                    return (int)HttpContext.Current.Session["ID"];
+                }
+                HttpContext.Current.Session["ID"] = 1;
+                return 1;
+            }
+            set
+            {
+                HttpContext.Current.Session["ID"] = value;
+            }
+        }
+
+
+        public static string FirstName
+        {
+            get
+            {
+                if (HttpContext.Current.Session["FirstName"] != null)
+                {
+                    return HttpContext.Current.Session["FirstName"].ToString();
                 }
                 return null;
             }
-            set { HttpContext.Current.Session["Name"] = value; }
+            set { HttpContext.Current.Session["FirstName"] = value; }
         }
 
         public static string Lastname
@@ -61,22 +78,7 @@ namespace Flex.Core
         }
 
 
-        public static int? ID
-        {
-            get
-            {
-                if (HttpContext.Current.Session["ID"] != null)
-                {
-                    return (int)HttpContext.Current.Session["ID"];
-                }
-                HttpContext.Current.Session["ID"] = 1;
-                return 1;
-            }
-            set
-            {
-                HttpContext.Current.Session["ID"] = value;
-            }
-        }
+      
 
         
 

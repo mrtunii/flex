@@ -14,5 +14,12 @@ namespace Flex.Controllers
         {
             return View();
         }
+
+        [Route("login")]
+        [HttpPost]
+        public ActionResult Login()
+        {
+
+        }
     }
 }
